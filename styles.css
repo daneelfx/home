@@ -1,0 +1,191 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Turret Road', cursive;
+}
+
+main {
+  height: 100vh;
+  background: #ffefba; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ffffff, #ffefba); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #ffefba
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: relative;
+  overflow: hidden;
+}
+
+.message,
+.container,
+.author {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.message {
+  top: 2%;
+}
+
+.container {
+  top: 5%;
+}
+
+.color__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.author {
+  top: 50%;
+  font-family: 'Codystar', cursive;
+  font-weight: 900;
+  letter-spacing: 0.3rem;
+  font-size: 3rem;
+}
+
+.color__container,
+.lights__panel div {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.color__container div {
+  width: 70px;
+  height: 20px;
+  margin: 5px;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.color__container div:hover {
+  height: 40px;
+}
+
+.lights__panel {
+  margin-top: 5px;
+}
+
+.lights__panel div {
+  width: 84px;
+  padding: 2px 4px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.main__light--1,
+.main__light--2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 170vh;
+  width: 100vw;
+  transition: all 0.5s;
+}
+
+.main__light--1 {
+  background-color: rgb(255, 215, 0);
+  clip-path: polygon(40% 0, 60% 0, 50% 100%);
+  transform-origin: 50% 100%;
+  animation: rotating-light 3s ease-in-out infinite alternate forwards;
+  opacity: 0.6;
+}
+
+.main__light--1--moved {
+  clip-path: polygon(20% 0, 40% 0, 20% 100%);
+  transform-origin: 20% 100%;
+}
+
+.main__light--2 {
+  background-color: rgb(255, 0, 255);
+  clip-path: polygon(60% 0, 80% 0, 80% 100%);
+  transform-origin: 80% 100%;
+  animation: rotating-light 3s ease-in-out infinite alternate-reverse forwards;
+  opacity: 0;
+}
+
+@keyframes rotating-light {
+  0% {
+    transform: rotateZ(-98deg);
+  }
+
+  100% {
+    transform: rotateZ(98deg);
+  }
+}
+
+.main__lantern--1,
+.main__lantern--2 {
+  position: absolute;
+  bottom: 0;
+  width: 16vw;
+  height: 16vw;
+  border: 10px solid black;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 0.5s;
+}
+
+.main__lantern--1 {
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.main__lantern--1--moved {
+  left: 20%;
+}
+
+.main__lantern--2 {
+  left: 80%;
+  opacity: 0;
+  transform: translate(-50%, 50%);
+}
+
+.browse-projects-button {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  border: 2px solid black;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  transform: translateX(70%) rotateZ(-90deg);
+  transform-origin: top left;
+  background-color: white;
+}
+
+@media (min-width: 680px) {
+  .author {
+    font-size: 6rem;
+  }
+
+  .color__container {
+    flex-direction: row;
+  }
+
+  .color__container div:hover {
+    height: 20px;
+    width: 100px;
+  }
+
+  .lights__panel {
+    text-align: center;
+  }
+
+  .lights__panel div {
+    display: inline-block;
+  }
+}
