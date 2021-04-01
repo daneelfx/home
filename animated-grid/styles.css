@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(95, 158, 160);
+}
+
+.grid,
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+/* .delay {
+  animation-name: color-transition;
+  animation-duration: 1s;
+}
+
+@keyframes color-transition {
+  0% {
+    background-color: rgba(25, 25, 112, 1);
+  }
+} */
+
+/* .delay {
+  transition: all 5s;
+} */
