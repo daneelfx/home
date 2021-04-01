@@ -9,8 +9,8 @@ gridBackgroundElement.style.backgroundColor = gridInitColor
 
 const gridStyles = getComputedStyle(gridElement)
 
-const itemHeightPx = 60
-const itemWidthPx = 60
+const itemHeightPx = 40
+const itemWidthPx = 40
 
 const getGridDimensions = function (itemHeightPx, itemWidthPx) {
   const gridHeight = gridStyles.height.slice(0, -2)
@@ -125,8 +125,8 @@ const setInitGrid = function () {
       let gridItem = document.createElement('div')
       gridItem.classList.add('grid-item', `grid-item__row-${rowNumber}`, `grid-item__column-${columnNumber}`)
 
-      // gridItem.addEventListener('click', handler.bind(gridItem, 2000), null, true)
-      gridItem.addEventListener('touchmove', handler.bind(gridItem, 2000), null, true)
+      gridItem.addEventListener('click', handler.bind(gridItem, 2000), null, true)
+      // gridItem.addEventListener('touchmove', handler.bind(gridItem, 2000), null, true)
 
       gridItem.style.transition = 'all'
 
