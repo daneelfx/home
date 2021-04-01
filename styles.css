@@ -49,9 +49,10 @@ main {
 .author {
   top: 50%;
   font-family: 'Codystar', cursive;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0.3rem;
   font-size: 3rem;
+  text-shadow: 0px 2px 10px rgb(255, 160, 122);
 }
 
 .color__container,
