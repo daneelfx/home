@@ -125,8 +125,8 @@ const setInitGrid = function () {
       let gridItem = document.createElement('div')
       gridItem.classList.add('grid-item', `grid-item__row-${rowNumber}`, `grid-item__column-${columnNumber}`)
 
-      gridItem.addEventListener('click', handler.bind(gridItem, 2000), null, true)
-      // gridItem.addEventListener('touchmove', handler.bind(gridItem, 2000), null, true)
+      gridItem.addEventListener('mouseover', handler.bind(gridItem, 2000), null, true)
+      gridItem.addEventListener('touchstart', handler.bind(gridItem, 2000), null, true)
 
       gridItem.style.transition = 'all'
 
